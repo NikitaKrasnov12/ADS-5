@@ -8,9 +8,10 @@ class TStack {
  private:
     T *arr;
     int tIndex;
+
  public:
     TStack() {
-        arr = new T[size]
+        arr = new T[size];
         tIndex = -1;
     }
     void push(T value) {
@@ -32,7 +33,7 @@ class TStack {
         return tIndex == -1;
     }
     bool isFull() const {
-        return tIndex == size - 1;
+        return tIndex == size;
     }
     T& get() const {
         if (isEmpty()) {
