@@ -17,14 +17,15 @@ class TStack {
     }
     void push(T value) {
         if (isFull()) {
-            throw std::string("Stack is full");
+             std::cout << "Stack is Full!" << "\n";
         } else {
             arr[++tIndex] = value;
         }
     }
     T& pop() {
         if (isEmpty()) {
-            throw std::string("Stack is empty");
+            std::cout << "Stack is Empty!" << "\n";
+            return -1;
         } else {
             return arr[tIndex--];
         }
@@ -37,7 +38,8 @@ class TStack {
     }
     T& get() const {
         if (isEmpty()) {
-            throw std::string("Stack is empty");
+            std::cout << "Stack is Empty!" << "\n";
+             return -1;
         } else {
             return arr[tIndex];
         }
