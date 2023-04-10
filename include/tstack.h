@@ -1,16 +1,14 @@
 // Copyright 2021 NNTU-CS
 #ifndef INCLUDE_TSTACK_H_
 #define INCLUDE_TSTACK_H_
-
+#include <string>
 
 template<typename T, int size>
 class TStack {
- private:
+private:
     T arr[100];
-    int top_index;
- 
-
- public:
+    int tIndex;
+public:
     TStack() :top_index(-1) {}
     void push(T value) {
         if (isFull()) {
