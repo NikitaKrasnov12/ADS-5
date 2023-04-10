@@ -2,6 +2,7 @@
 #ifndef INCLUDE_TSTACK_H_
 #define INCLUDE_TSTACK_H_
 #include <string>
+#include <iostream>
 
 template<typename T, int size>
 class TStack {
