@@ -5,33 +5,41 @@
 
 template<typename T, int size>
 class TStack {
-private:
-    T arr[100];
+ private:
+    T *arr;
     int tIndex;
-public:
-    TStack() :top_index(-1) {}
+ public:
+    TStack() {
+        arr = new T[size]
+        tIndex = -1;
+    }
     void push(T value) {
         if (isFull()) {
             throw std::string("Stack is full");
         } else {
-            arr[++top_index] = value;
+            arr[++tIndex] = value;
         }
     }
-    const T& pop() {
+    T& pop() {
         if (isEmpty()) {
             throw std::string("Stack is empty");
+            return -1;
         } else {
-            return arr[top_index--];
+            return arr[tIndex--];
         }
     }
     bool isEmpty() const {
-        return top_index == -1;
+        return tIndex == -1;
     }
     bool isFull() const {
-        return top_index == size - 1;
+        return tIndex == size - 1;
     }
-    const T& get() const {
-        return arr[top_index];
+    T& get() const {
+        if (isEmpty()) {
+            return -1;
+        } else {
+            return arr[tIndex];
+        }
     }
 };
 
