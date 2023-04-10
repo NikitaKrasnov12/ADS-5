@@ -24,7 +24,6 @@ class TStack {
     T& pop() {
         if (isEmpty()) {
             throw std::string("Stack is empty");
-            return -1;
         } else {
             return arr[tIndex--];
         }
@@ -37,7 +36,7 @@ class TStack {
     }
     T& get() const {
         if (isEmpty()) {
-            return -1;
+            throw std::string("Stack is empty");
         } else {
             return arr[tIndex];
         }
