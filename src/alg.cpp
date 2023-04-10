@@ -68,7 +68,7 @@ int eval(std::string pref) {
 TStack<int, 100> opStack2;
     std::string result2 = "";
     for (size_t i = 0; i < pref.size(); i++) {
-        if (getPriority(pref[i]) == -1) {
+        if (getPrior(pref[i]) == -1) {
             if (pref[i] == ' ') {
                 continue;
             } else if (isdigit(pref[i + 1])) {
@@ -88,5 +88,4 @@ TStack<int, 100> opStack2;
         }
     }
     return opStack2.get();
-}
 }
