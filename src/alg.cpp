@@ -6,18 +6,25 @@ int prior(char sim) {
     switch (sim) {
     case '(':
         return 0;
+        break;
     case ')':
         return 1;
+        break;
     case '+':
         return 2;
+        break;
     case '-':
         return 2;
+        break;
     case '*':
         return 3;
+        break;
     case '/':
         return 3;
+        break;
     default:
         return 0;
+        break;
     }
 }
 std::string infx2pstfx(std::string inf) {
@@ -57,13 +64,13 @@ TStack<char, 100> opStack;
 int calculate(const int a, const int b, const char oper) {
     switch (oper) {
         case '+':
-            return a + b;
+            return b + a;
         case '-':
-            return a - b;
+            return b - a;
         case '*':
             return a * b;
         case '/':
-            return a / b;
+            return b / a;
         default:
             break;
     }
