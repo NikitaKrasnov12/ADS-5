@@ -21,7 +21,6 @@ class TStack {
     void push(T value) {
         arr[++tIndex] = value;
     }
-    
     T& pop() {
         return arr[tIndex--];
     }
