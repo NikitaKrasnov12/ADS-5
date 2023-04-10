@@ -15,32 +15,21 @@ class TStack {
         arr = new T[size];
         tIndex = -1;
     }
-    void push(T value) {
-        if (isFull()) {
-             std::cout << "Stack is Full!" << "\n";
-        } else {
-            arr[++tIndex] = value;
-        }
-    }
-    T& pop() {
-        if (isEmpty()) {
-            std::cout << "Stack is Empty!" << "\n";
-        } else {
-            return arr[tIndex--];
-        }
-    }
-    bool isEmpty() const {
+    bool isEmpty() {
         return tIndex == -1;
+    }
+    void push(T value) {
+        arr[++tIndex] = value;
+    }
+    
+    T& pop() {
+        return arr[tIndex--];
     }
     bool isFull() const {
         return tIndex == size;
     }
     T& get() const {
-        if (isEmpty()) {
-            std::cout << "Stack is Empty!" << "\n";
-        } else {
-            return arr[tIndex];
-        }
+        return arr[tIndex];
     }
 };
 
